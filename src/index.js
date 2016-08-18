@@ -51,19 +51,19 @@ exec(`npm install --save-dev ${devModules.join(' ')}`)
     return exec('mkdir -p web/src/style');
   })
   .then(() => {
-    return fs.copySync(`${__dirname}/eslintrc.json`, '.eslintrc');
+    return fs.copySync(`${__dirname}/..copy/eslintrc.json`, '.eslintrc');
   })
   .then(() => {
-    return fs.copySync(`${__dirname}/bin-index.html`, 'web/bin/index.html');
+    return fs.copySync(`${__dirname}/..copy/bin-index.html`, 'web/bin/index.html');
   })
   .then(() => {
-    return fs.copySync(`${__dirname}/src-index.js`, 'web/src/index.js');
+    return fs.copySync(`${__dirname}/..copy/src-index.js`, 'web/src/index.js');
   })
   .then(() => {
-    return fs.copySync(`${__dirname}/src-store.js`, 'web/src/store.js');
+    return fs.copySync(`${__dirname}/..copy/src-store.js`, 'web/src/store.js');
   })
   .then(() => {
-    return fs.copySync(`${__dirname}/src-reducers-index.js`, 'web/src/reducers/index.js');
+    return fs.copySync(`${__dirname}/..copy/src-reducers-index.js`, 'web/src/reducers/index.js');
   })
   .then(() => {
     return exec('touch web/src/style/main.scss');
