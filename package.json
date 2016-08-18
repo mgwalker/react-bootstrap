@@ -1,5 +1,5 @@
 {
-  "name": "react-bootstrap",
+  "name": "@mgwalker/react-bootstrap",
   "version": "1.0.0",
   "description": "Gets a project up and going with React and Redux",
   "main": "bin/index.js",

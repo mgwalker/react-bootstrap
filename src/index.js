@@ -1,4 +1,7 @@
+#!/usr/bin/env node
+
 const fs = require('fs-extra-promise');
+const path = require('path');
 const _exec = require('child_process').exec;
 const exec = (...args) => {
   return new Promise(resolve => {
@@ -7,6 +10,8 @@ const exec = (...args) => {
     });
   });
 };
+
+const copyPath = path.join(__dirname, '../copy');
 
 const devModules = [
   "babel",
@@ -51,19 +56,19 @@ exec(`npm install --save-dev ${devModules.join(' ')}`)
     return exec('mkdir -p web/src/style');
   })
   .then(() => {
-    return fs.copySync(`${__dirname}/..copy/eslintrc.json`, '.eslintrc');
+    return fs.copySync(`${copyPath}/eslintrc.json`, '.eslintrc');
   })
   .then(() => {
-    return fs.copySync(`${__dirname}/..copy/bin-index.html`, 'web/bin/index.html');
+    return fs.copySync(`${copyPath}/bin-index.html`, 'web/bin/index.html');
   })
   .then(() => {
-    return fs.copySync(`${__dirname}/..copy/src-index.js`, 'web/src/index.js');
+    return fs.copySync(`${copyPath}/src-index.js`, 'web/src/index.js');
   })
   .then(() => {
-    return fs.copySync(`${__dirname}/..copy/src-store.js`, 'web/src/store.js');
+    return fs.copySync(`${copyPath}/src-store.js`, 'web/src/store.js');
   })
   .then(() => {
-    return fs.copySync(`${__dirname}/..copy/src-reducers-index.js`, 'web/src/reducers/index.js');
+    return fs.copySync(`${copyPath}/src-reducers-index.js`, 'web/src/reducers/index.js');
   })
   .then(() => {
     return exec('touch web/src/style/main.scss');
