@@ -1,0 +1,17 @@
+{
+  "name": "react-bootstrap",
+  "version": "1.0.0",
+  "description": "Gets a project up and going with React and Redux",
+  "main": "bin/index.js",
+  "keywords": [
+    "bootstrap",
+    "react",
+    "redux"
+  ],
+  "author": "Greg Walker <react-bootstrap@darkcooger.net>",
+  "license": "ISC",
+  "repository": {
+    "type": "git",
+    "url": "mgwalker/react-bootstrap"
+  }
+}
